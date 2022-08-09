@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --peach: peachpuff;
+  --winning-blocks: rgb(235, 153, 81);
+}
+
+body, input, textarea, button {
+  font-family: 'Staatliches', cursive;
+  color: peachpuff;
+}
+
+.container {
+  padding: 40px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(81, 112, 206);
+}
+
+h1 {
+  font-size: 80px;
+}
+
+#gameboard {
+  width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+.box {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--peach);
+  font-size: 120px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+
+}
+ /* counts the third box of every row to remove the right border */
+.box:nth-child(3n)  {
+  border-right: none;
+}
+ /* counts up to 6 boxes, anything after that has the box clause will remove the bottom border */
+.box:nth-child(6) ~ .box {
+  border-bottom: none;
+}
+
+button {
+  padding: 10px;
+  width: 150px;
+  height: 35px;
+  border-radius: 6px;
+  background-color: rgb(81, 112, 206);
+  box-shadow: 0px 1px 4px rgb(255, 218, 185);
+  color: var(--peach);
+  border: 2px solid var(--peach);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+
+}
+
+button:hover {
+  background-color: var(--winning-blocks);
+  color: var(--peach);
+  transform: translateY(-2px);
+}
+
+/* .throb {
+  /* transition: 0.5s; */
+  /* border-color: hsl(28, 100%, 82%);
+  box-shadow: 0 0 2rem hsl(27, 94%, 94%);
+} */
